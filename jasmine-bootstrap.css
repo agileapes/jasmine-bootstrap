@@ -1,0 +1,123 @@
+.navigation {
+    position: fixed;
+    left: 10px;
+    top: 50px;
+    width: 23%;
+    z-index: 1500;
+}
+
+.breadcrumb {
+    position: fixed;
+    width: 100%;
+    z-index: 2000;
+}
+
+.report {
+    margin-top: 40px;
+    z-index: 1000;
+}
+
+.status-report {
+    margin-left: 5px;
+    cursor: default;
+    height: 20px;
+    padding-top: 4px !important;
+}
+
+.report > .test-suite.disabled {
+    opacity: 0.8;
+}
+
+.suite-title {
+    border-bottom: 1px solid #f4f4f4;
+    border-right: 3px solid #808080;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.suite-title a {
+    color: #000000;
+}
+
+.suite-title a:hover {
+    color: #464646;
+    text-decoration: none;
+}
+
+.suite-body {
+    padding-top: 5px;
+    padding-right: 0;
+    padding-left: 20px;
+    padding-bottom: 5px;
+}
+
+.run-all {
+    text-align: right;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.test-specification a {
+    color: #4b4b4b;
+}
+
+.test-specification > span {
+    display: inline-block;
+    font-family: "Glyphicons Halflings",serif;
+    font-size: 12px;
+    width: 16px;
+    position: relative;
+    top: 2px;
+    float: right;
+}
+
+.test-specification.passed > span:before {
+    content: "\e013";
+}
+
+.test-specification.failed > span:before {
+    content: "\e014";
+}
+
+.test-specification.pending > span:before {
+    content: "\e023";
+}
+
+.test-specification.disabled > span:before {
+    content: "\e090";
+}
+
+.test-specification.passed, .test-specification.passed a {
+    color: green;
+    background: #f7fffc;
+}
+
+.test-specification.failed, .test-specification.failed a {
+    color: #bb3239;
+    background: #faf1f0;
+}
+
+.test-specification.pending, .test-specification.pending a {
+    color: #c3921f;
+    background: #fff6f2;
+}
+
+.test-specification.disabled, .test-specification.disabled a {
+    color: #808080;
+}
+
+.test-specification.failed .expectations div {
+    margin-left: 10px;
+}
+
+.test-specification.failed .expectations div span {
+    display: inline-block;
+    font-family: "Glyphicons Halflings",serif;
+    font-size: 10px;
+    width: 16px;
+    position: relative;
+}
+
+.test-specification.failed .expectations div span:before {
+    content: "\e080";
+}
