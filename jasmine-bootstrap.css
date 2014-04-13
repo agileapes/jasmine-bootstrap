@@ -1,9 +1,13 @@
-.navigation {
-    position: fixed;
-    left: 10px;
-    top: 50px;
-    width: 23%;
-    z-index: 1500;
+* {
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+body {
+    font-size: 14px;
 }
 
 .breadcrumb {
@@ -15,6 +19,14 @@
 .report {
     margin-top: 40px;
     z-index: 1000;
+    margin-left: 25%;
+    margin-right: 30px;
+    width: 73%;
+}
+
+.report.collapsed {
+    margin-left: 90px;
+    width: auto;
 }
 
 .status-report {
@@ -33,6 +45,12 @@
     border-right: 3px solid #808080;
     padding: 5px;
     font-size: 16px;
+}
+
+.test-suite .test-suite .suite-title {
+    border: none;
+    font-size: 14px;
+    margin-bottom: 0;
 }
 
 .suite-title a {
@@ -57,13 +75,17 @@
     margin-bottom: 10px;
 }
 
+.test-specification {
+    margin-bottom: 2px;
+}
+
 .test-specification a {
     color: #4b4b4b;
 }
 
 .test-specification > span {
     display: inline-block;
-    font-family: "Glyphicons Halflings",serif;
+    font-family: "Glyphicons Halflings", serif;
     font-size: 12px;
     width: 16px;
     position: relative;
@@ -112,7 +134,7 @@
 
 .test-specification.failed .expectations div span {
     display: inline-block;
-    font-family: "Glyphicons Halflings",serif;
+    font-family: "Glyphicons Halflings", serif;
     font-size: 10px;
     width: 16px;
     position: relative;
@@ -120,4 +142,175 @@
 
 .test-specification.failed .expectations div span:before {
     content: "\e080";
+}
+
+li.nonempty {
+    font-weight: bold;
+}
+
+li.failed.nonempty a {
+    color: #bb3239;
+}
+
+li.pending.nonempty a {
+    color: #c3921f;
+}
+
+.navigation {
+    position: fixed;
+    left: 10px;
+    top: 50px;
+    width: 23%;
+    z-index: 1500;
+}
+
+.navigation.collapsed {
+    width: 65px;
+    border-right: 1px solid #dfdfdf;
+    padding-right: 10px;
+    opacity: 0.1;
+}
+
+.navigation.collapsed:hover {
+    opacity: 1;
+}
+
+.navigation .tooltip {
+    visibility: hidden;
+}
+
+.navigation.collapsed .tooltip {
+    visibility: visible;
+    white-space: nowrap;
+}
+
+.navigation.collapsed li a {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.navigation label .glyphicon {
+    display: none;
+}
+
+.navigation.collapsed label .glyphicon {
+    display: inline-block;
+}
+
+.navigation.collapsed em {
+    display: none;
+}
+
+.navigation.collapsed span.badge {
+    display: none;
+}
+
+.navigation .expander .whileExpanded {
+    display: inline-block;
+}
+
+.navigation .expander .whileCollapsed {
+    display: none;
+}
+
+.navigation.collapsed .expander .whileExpanded {
+    display: none;
+}
+
+.navigation.collapsed .expander .whileCollapsed {
+    display: inline-block;
+}
+
+.navigation ul {
+    border-bottom: 1px solid #dfdfdf;
+    margin-bottom: 5px;
+}
+
+.navigation em {
+    font-style: normal;
+}
+
+.navigation .container {
+    margin-top: 5px;
+}
+
+.navigation.collapsed .container {
+    width: 50px;
+    text-align: right;
+}
+
+.report.dim .test-suite {
+    opacity: 0.3;
+    border-radius: 10px;
+}
+
+.report.dim .test-suite:hover {
+    opacity: 1;
+}
+
+.report.dim .test-suite.passed:hover {
+    background: #f7fffc;
+}
+
+.report.dim-secondary .test-suite.pending {
+    background: #fff6f2;
+    opacity: 1;
+}
+
+.report.dim .test-suite.pending:hover {
+    background: #fff6f2;
+}
+
+.report.dim .test-suite.failed {
+    background: #faf1f0;
+    opacity: 1;
+}
+
+.test-suite > h4 > em {
+    border: 1px solid #000000;
+    color: #000000;
+    border-radius: 2px;
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    margin: 3px 6px 3px 3px;
+    cursor: pointer;
+    background: #f5f5f5;
+    -webkit-transition: none 0s;
+    -moz-transition: none 0s;
+    -ms-transition: none 0s;
+    -o-transition: none 0s;
+    transition: none 0s;
+}
+
+.test-suite > h4 > em:hover {
+    border-color: #b7ccd9;
+    color: #b7ccd9;
+}
+
+.test-suite > h4 > em > span {
+    position: relative;
+    top: -2px;
+}
+
+.test-suite > h4 > em > span:before {
+    content: "\2212";
+}
+
+.test-suite.collapsed > h4 > em > span:before {
+    content: "\2b";
+}
+
+.test-suite.collapsed.collapsed > .suite-body {
+    display: none;
+}
+
+.report > .test-suite > h4 > em {
+    display: none;
+}
+
+.report.collapsed .test-suite > h4 > em {
+    display: none;
 }
